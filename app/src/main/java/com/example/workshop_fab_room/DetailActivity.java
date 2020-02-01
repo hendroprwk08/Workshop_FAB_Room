@@ -61,6 +61,10 @@ public class DetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //tampilkan tombol panah back
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     private int setSpinner(Spinner spinner, String myString){

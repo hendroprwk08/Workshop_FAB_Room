@@ -19,16 +19,13 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.CardViewHolder> {
     private List<Siswa> siswas;
     private Context context;
 
-    public RvAdapter(Context context) {
+    public RvAdapter(List<Siswa> siswas, Context context) {
+        this.siswas = siswas;
         this.context = context;
     }
 
     public List<Siswa> getListSiswa() {
         return siswas;
-    }
-
-    public void setListSiswa(List siswa) {
-        this.siswas = siswa;
     }
 
     @NonNull
@@ -79,8 +76,8 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.CardViewHolder> {
 
         public CardViewHolder(View view) {
             super(view);
-            tvNama = (TextView) itemView.findViewById(R.id.tv_nama);
-            tvKelas = (TextView) itemView.findViewById(R.id.tv_kelas);
+            tvNama = (TextView) view.findViewById(R.id.tv_nama);
+            tvKelas = (TextView) view.findViewById(R.id.tv_kelas);
         }
     }
 

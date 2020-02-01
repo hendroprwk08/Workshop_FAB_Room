@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etNama;
     Spinner spKelas;
+    RvAdapter adapter;
 
     //panggil DB
     static MyDatabase db;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 "db-siswa")
                 .allowMainThreadQueries()
                 .build();
+
 
         viewRecyclerView();
 
@@ -75,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
                                 db.siswaDAO().insertAll(new Siswa(nama, kelas));
 
+                                viewRecyclerView();
+
                                 Toast.makeText(getApplicationContext(),
                                         "Data terisimpan",
                                         Toast.LENGTH_SHORT).show();
@@ -102,8 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         siswas = db.siswaDAO().getAll(); //ambil semua data
 
-        RvAdapter adapter = new RvAdapter(this);
-        adapter.setListSiswa(siswas);
+        adapter = new RvAdapter(siswas, this);
         rv.setAdapter(adapter);
     }
 
