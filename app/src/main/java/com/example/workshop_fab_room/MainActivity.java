@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
-
         viewRecyclerView();
 
         FloatingActionButton fab = findViewById(R.id.fab);
