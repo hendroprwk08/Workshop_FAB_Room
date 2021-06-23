@@ -81,6 +81,4 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.CardViewHolder> {
             tvKelas = (TextView) view.findViewById(R.id.tv_kelas);
         }
     }
-
-
 }

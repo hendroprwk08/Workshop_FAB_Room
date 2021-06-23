@@ -13,9 +13,6 @@ public interface SiswaDAO {
     @Query("SELECT * FROM siswa")
     List<Siswa> getAll(); //harus pake list karena akan di konversi menjadi cursor
 
-    @Query("SELECT * FROM siswa WHERE nama LIKE :nama")
-    List<Siswa> findByName(String nama);
-
     @Insert
     void insertAll(Siswa siswa); //tanpa id (karena id otomatis)
 
